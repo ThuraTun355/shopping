@@ -13,17 +13,10 @@ const App = () => {
       <GeneralContextProvider>
         <Container>
           <Heading />
-        </Container>
-        <hr className=" w-full bg-black h-0.5" />
-        <Container>
           <CategorySection />
           <ProductSection />
         </Container>
-        <Footer>
-          <Container>
-            <FooterContent />
-          </Container>
-        </Footer>
+        <Footer />
       </GeneralContextProvider>
     </>
   );

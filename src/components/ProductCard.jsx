@@ -1,5 +1,6 @@
 import React from "react";
 import StarRating from "./StarRating";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   product: {
@@ -12,7 +13,10 @@ const ProductCard = ({
   },
 }) => {
   return (
-    <div className=" p-4 border border-neutral-700 flex flex-col gap-2 items-start justify-center">
+    <Link
+      to={`/product-detail/${id}`}
+      className=" p-4 border border-neutral-700 flex flex-col gap-2 items-start justify-center"
+    >
       <img src={image} className=" h-24 w-auto" />
       <h5 className=" font-bold line-clamp-1">{title}</h5>
       <p className=" font-medium text-sm line-clamp-3 text-neutral-500">
@@ -28,11 +32,11 @@ const ProductCard = ({
           $ <span className=" text-neutral-800">{price}</span>
         </p>
 
-        <button className=" bg-neutral-700 px-8 py-1 text-neutral-100 border border-neutral-700 rounded">
+        <button className=" text-neutral-800 px-8 py-1 bg-neutral-100 border border-neutral-700 rounded">
           Add
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 

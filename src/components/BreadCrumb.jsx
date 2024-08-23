@@ -6,16 +6,16 @@ const BreadCrumb = ({ productDetailTitle }) => {
   return (
     <>
       <div className=" w-full flex gap-3 items-center justify-start mb-5">
-        <Link className=" font-medium text-neutral-400" to={"/"}>
+        <Link className=" font-semibold text-neutral-500" to={"/"}>
           Home
         </Link>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={2.0}
           stroke="currentColor"
-          className="size-4 text-neutral-400"
+          className="size-4 text-neutral-500"
         >
           <path
             strokeLinecap="round"
@@ -24,7 +24,7 @@ const BreadCrumb = ({ productDetailTitle }) => {
           />
         </svg>
 
-        <p className=" font-medium text-neutral-800">{productDetailTitle}</p>
+        <p className=" font-semibold text-neutral-900">{productDetailTitle}</p>
       </div>
     </>
   );

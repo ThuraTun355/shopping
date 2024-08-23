@@ -1,7 +1,10 @@
 import React from "react";
 import Container from "./Container";
+import { Link } from "react-router-dom";
+import useCartStore from "../store/useCartStore";
 
 const Heading = () => {
+  const { carts } = useCartStore();
   return (
     <header className=" py-5 pe-3">
       <Container>
@@ -24,7 +27,10 @@ const Heading = () => {
                 />
               </svg>
             </button>
-            <button className="border border-neutral-600 p-2 bg-neutral-700 text-white rounded hover:bg-white hover:text-black duration-200 relative">
+            <Link
+              to={"/my-cart"}
+              className="border border-neutral-600 p-2 bg-neutral-700 text-white rounded hover:bg-white hover:text-black duration-200 relative"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -40,9 +46,9 @@ const Heading = () => {
                 />
               </svg>
               <span className=" size-6 bg-red-500 text-white inline-flex justify-center items-center rounded-full absolute top-0 right-0 text-xs transform translate-x-1/2 -translate-y-1/2">
-                1
+                {carts.length}
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </Container>
